@@ -6,12 +6,16 @@ module phoneBlock(){
 			roundedBox([10,67,127], 5, false);
 }
 
-module phone(){
-	phoneBlock();
-
+module cameraBlock(){
 	translate([-2,45,30]){
 		roundedBox([10,15,20],3,false);
 	}
+}
+
+module phone(){
+	phoneBlock();
+
+	cameraBlock();
 }
 
 module roundedBox(size, radius, sidesonly)
