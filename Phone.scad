@@ -6,23 +6,39 @@ WIDTH = 67;
 THICKNESS = 10;
 CORNER_RADIUS = 5;
 
+CAMERA_HEIGTH = 15;
+CAMERA_WIDTH = 20;
+CAMERA_THICKNESS = 10;
+CAMERA_CORNER_RADIUS = 3;
+
 module phoneBlock(){
 	offset_above_line_z=[0,0,WIDTH / 2];
-
+	laptop_position=DIRECTION_LEFT;
+	
 	translate(offset_above_line_z) 
-		rotate(DIRECTION_LEFT)
-			roundedBox([THICKNESS,WIDTH,HEIGTH], CORNER_RADIUS);
+		rotate(laptop_position)
+			roundedBox([
+				THICKNESS,
+				WIDTH,
+				HEIGTH], 
+				CORNER_RADIUS);
 }
 
 module cameraBlock(){
-	translate([-2,45,30]){
-		roundedBox([10,15,20],3,false);
-	}
+	camera_offset = [-2,45,30];
+	laptop_position=DIRECTION_LEFT;
+	
+	translate(camera_offset)
+		rotate(laptop_position)
+			roundedBox([
+				CAMERA_THICKNESS,
+				CAMERA_WIDTH,
+				CAMERA_HEIGTH],
+				CAMERA_CORNER_RADIUS);
 }
 
 module phone(){
 	phoneBlock();
-
 	cameraBlock();
 }
 
