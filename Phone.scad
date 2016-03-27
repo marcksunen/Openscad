@@ -1,9 +1,17 @@
 
+DIRECTION_LEFT = [90,0,0];
+
+HEIGTH = 127;
+WIDTH = 67;
+THICKNESS = 10;
+CORNER_RADIUS = 5;
 
 module phoneBlock(){
-	translate([0,0,34]) 
-		rotate([90,0,0])
-			roundedBox([10,67,127], 5, false);
+	offset_above_line_z=[0,0,WIDTH / 2];
+
+	translate(offset_above_line_z) 
+		rotate(DIRECTION_LEFT)
+			roundedBox([THICKNESS,WIDTH,HEIGTH], CORNER_RADIUS);
 }
 
 module cameraBlock(){
