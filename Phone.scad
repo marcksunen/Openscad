@@ -1,13 +1,17 @@
 
 
+module phoneBlock(){
+	translate([0,0,34]) 
+		rotate([90,0,0])
+			roundedBox([10,67,127], 5, false);
+}
 
 module phone(){
-translate([0,0,34]) 
-rotate([90,0,0])
-roundedBox([10,67,127], 5, false);
-translate([-2,45,30]){
-roundedBox([10,15,20],3,false);
-}
+	phoneBlock();
+
+	translate([-2,45,30]){
+		roundedBox([10,15,20],3,false);
+	}
 }
 
 module roundedBox(size, radius, sidesonly)
